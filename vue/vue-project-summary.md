@@ -5,7 +5,7 @@
 ## 2.Vue2.0 框架。
 > 注意vue生命周期
 
-![vue生命周期函数](https://github.com/huanglp47/thinkingInFontEnd/img/vue-hook-fn.png)
+![vue生命周期函数](https://github.com/huanglp47/thinkingInFontEnd/tree/master/img/vue-hook-fn.png)
 
 ## 3.Vue-router：
 路由，注意$router与$route区别，用法：
@@ -42,7 +42,7 @@ css模块化
 ## 1.开发环境
 http-proxy-middleware中间件 ，代理proxyTable
 
-![跨域处理开发环境](https://github.com/huanglp47/thinkingInFontEnd/img/vue-proxyTable.png)
+![跨域处理开发环境](https://github.com/huanglp47/thinkingInFontEnd/tree/master/img/vue-proxyTable.png)
 
 
 ## 2.生产环境
@@ -64,14 +64,14 @@ axios配合promise处理异步请求
 
 >根据URL hostName动态判断当前环境并赋值，如：
 ```js
-if(hostName =='app.mixcapp.com'){
-    ApiUrl = 'https://app.mixcapp.com'
-}else if(hostName =='test.mixcapp.com'&&port=='8001'){
-    ApiUrl ='http://test.mixcapp.com:8001'
-}else if(hostName =='uat.mixcapp.com'){
-    ApiUrl='http://uat.mixcapp.com'
-}else if(hostName =='test.mixcapp.com'&&port=='8800'){
-    ApiUrl ='http://test.mixcapp.com:8800'
+if(hostName =='app.emixcapp.com'){
+    ApiUrl = 'https://app.emixcapp.com'
+}else if(hostName =='test.emixcapp.com'&&port=='8001'){
+    ApiUrl ='http://test.emixcapp.com:8001'
+}else if(hostName =='uat.emixcapp.com'){
+    ApiUrl='http://uat.emixcapp.com'
+}else if(hostName =='test.emixcapp.com'&&port=='8800'){
+    ApiUrl ='http://test.emixcapp.com:8800'
 }
 ```
 
@@ -88,13 +88,13 @@ devtool: '#source-map',
 >使用'#cheap-module-eval-source-map'谷歌浏览器断点调试有问题，改为后者即可
 
 ## 2.生产环境：
-![webpack配置](https://github.com/huanglp47/thinkingInFontEnd/img/webpack-pro.png)
+![webpack配置](https://github.com/huanglp47/thinkingInFontEnd/tree/master/img/webpack-pro.png)
 
 productionSourceMap: false时，浏览器不会有webpack的调试map文件，只有压缩的dist目录
 
 打开目录：
 
-![webpack配置生成](https://github.com/huanglp47/thinkingInFontEnd/img/webpack-dist.png)
+![webpack配置生成](https://github.com/huanglp47/thinkingInFontEnd/tree/master/img/webpack-dist.png)
 
 assetsPublicPath 必须与线上目录一致，否则css,js无法找到
 
