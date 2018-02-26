@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .Site {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+        }
+        .Site-content{
+            flex: 1;
+        }
+        header{
+            width:100%;
+            height: 100px;
+            background: indianred;
+        }
+        footer{
+            width:100%;
+            height: 100px;
+            background: indianred;
+        }
+        .HolyGrail-nav, .HolyGrail-ads{
+            flex: 0 0 12em;
+            background:rebeccapurple;
+        }
+        .HolyGrail-nav{
+            order:-1;
+        }
+        .HolyGrail-ads{
+        }
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                flex: 1;
+            }
+            .HolyGrail-nav,
+            .HolyGrail-ads,.Site-content
+             {
+                flex: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<body class="Site">
+<header></header>
+<div class="main">
+    <main class="Site-content"></main>
+    <nav class="HolyGrail-nav">...</nav>
+    <aside class="HolyGrail-ads">...</aside>
+</div>
+<footer></footer>
+</body>
+</body>
+</html>

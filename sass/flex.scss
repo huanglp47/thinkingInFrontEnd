@@ -1,0 +1,92 @@
+@import "reset";
+
+.main-item {
+  display: flex;
+  align-items: flex-start;
+  .first-face {
+    display: flex;
+  }
+  .first-1-face {
+    display: flex;
+    justify-content: center;
+  }
+  .first-2-face {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .first-3-face {
+    display: flex;
+    align-items: center;
+  }
+  .first-4-face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .first-5-face {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .first-6-face {
+    display: flex;
+    align-items: flex-end;
+  }
+  .first-7-face {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .first-8-face {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+.main-item2 {
+  .second-face {
+    display: flex;
+    justify-content:space-between;
+  }
+  .second-2-face{
+    display: flex;
+    justify-content: space-between;
+    .pip:nth-child(2){
+      align-self: center;
+    }
+    .pip:nth-child(3){
+      align-self: flex-end;
+    }
+  }
+  .second-3-face{
+    display: flex;
+    justify-content: space-between;
+    .column{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .second-4-face{
+      display: flex;
+      justify-content: space-between;
+      .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &:nth-child(2){
+          justify-content: center;
+          align-items: center;
+        }
+      }
+  }
+  .second-5-face{
+    display: flex;
+    justify-content: space-between;
+    .column{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
+    }
+}
