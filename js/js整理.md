@@ -5,9 +5,16 @@
 >(2) 函数声明提升：执行代码之前会先读取函数声明，意味着可以把函数申明放在调用它的语句后面。
 只要函数在代码中进行了声明，无论它在哪个位置上进行声明， js引擎都会将它的声明放在范围作用域的顶部；
 
->(3) 变量or函数声明：函数声明会覆盖变量声明，但不会覆盖变量赋值。
-同一个名称标识a，即有变量声明var a，又有函数声明function a() {}，不管二者声明的顺序，函数声明会覆盖变量声明，也就是说，此时a的值是声明的函数function a() {}。注意：如果在变量声明的同时初始化a，或是之后对a进行赋值，此时a的值变量的值。eg: var a; var c = 1; a = 1; function a() { return true; } console.log(a);
-
+>#### (3) 变量or函数声明：函数声明会覆盖变量声明，但不会覆盖变量赋值。
+##### 同一个名称标识a，即有变量声明var a，又有函数声明function a() {}，不管二者声明的顺序，函数声明会覆盖变量声明，也就是说，此时a的值是声明的函数function a() {}。注意：如果在变量声明的同时初始化a，或是之后对a进行赋值，此时a的值变量的值。
+eg:
+```js
+var a;
+var c = 1;
+a = 1;
+function a() { return true; }
+console.log(a);
+```
 
 ## 2.window.onload ==? DOMContentLoaded ?
 
@@ -130,3 +137,60 @@ console.log(b)
 输出(output)
 loader: loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）
 插件(plugins)
+
+> webpack 组件按需加载 import() 和 require.ensure()
+```js
+require.ensure(['echarts'], function() {
+    var echarts = require('echarts');
+    /* ... */
+});
+```
+
+CommonsChunkPlugin提取所有的公共模块  分离CSS  ExtractTextWebpackPlugin 帮助你将 CSS 单独打包，
+
+
+## 10 一个shim是一个库,它将一个新的API引入到一个旧的环境中,而且仅靠旧环境中已有的手段实现
+      一个polyfill就是一个用在浏览器API上的shim.我们通常的做法是先检查当前浏览器是否支持某个API,如果不支持的话就加载对应的polyfill.
+      然后新旧浏览器就都可以使用这个API了.术语polyfill来自于一个家装产品Polyfilla:
+
+> shim 是将不同 api 封装成一种，比如 jQuery 的 $.ajax 封装了 XMLHttpRequest 和 IE 用 ActiveXObject 方式创建 xhr 对象；polyfill 特指 shim 成的 api 是遵循标准的，其典型做法是在IE浏览器中增加 window.XMLHttpRequest ，内部实现使用 ActiveXObject。
+
+
+## 11
+{}==0：VM339:1 Uncaught SyntaxError: Unexpected token ==
+
+0=={}：false
+
+''=={}：false
+
++undefined ：NaN
+
+0==[]：true
+''==[]：true
+
+0==undefined：false
+
+''==undefined: false
+
+"" == "0" // false
+
+0 == "" // true
+
+0 == "0" // true
+
+false == "0" // true
+
+[1,2] =='1,2';//true
+
+内部调用Object原型上的valueOf();
+
+--------------------
+优先级从高到低排列：
+typeof 是操作符，+-*/ 是运算符。typeof 有更高的优先级。
+圆括号()  >  typeof运算符   >   除法/
+
+1. typeof 1/0; //NaN
+2. typeof typeof 1/0; //NaN
+3. typeof(1/0); //"number"
+4. typeof typeof(1/0); //"string"
+5. typeof(typeof 1/0); //"number"
