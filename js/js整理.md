@@ -166,6 +166,7 @@ CommonsChunkPlugin提取所有的公共模块  分离CSS  ExtractTextWebpackPlug
 +undefined ：NaN
 
 0==[]：true
+
 ''==[]：true
 
 0==undefined：false
@@ -183,6 +184,20 @@ false == "0" // true
 [1,2] =='1,2';//true
 
 内部调用Object原型上的valueOf();
+null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN
+
+Number(null)
+// 0
+
+5 + null
+// 5
+
+Number(undefined)
+// NaN
+
+5 + undefined
+// NaN
+
 
 --------------------
 优先级从高到低排列：

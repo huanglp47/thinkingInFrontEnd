@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则</title>
+</head>
+<body>
+<script>
+    /** 需要进行转义的元字符 **/
+//    . * + ( ) $ / \ ? [ ] ^ { } - ! < >
+
+    //1.检测连续
+    function testRepeatingLetter(str){
+        return /([a-zA-Z0-9]+)\1/gi.test(str);
+    }
+    var a = testRepeatingLetter('3433dfdf6d6');
+    console.log(a);
+    //2.找重复
+//    'dffgfhg34444'.match(/([a-zA-Z0-9]+)\1/gi) //["ff", "4444"]
+
+//检查字符串是否有连续n次的字符，有返回，没有返回false
+    function testRepeate(n){
+
+    }
+
+//    1.不能全是相同的数字或者字母（如：000000、111111、222222、333333等等）
+//    2.不能是连续数字（如：123456、12345678、87654321等等）。
+//    所以需要个正则表达式满足以上两点。
+
+
+    // 3. 345=>[3][4][5]
+    var str = 'asdsfddf345fgfg';
+    var str1 = str.replace(/(\d)/gi, function(item){
+        return '['+item+']'
+    })
+    console.log(str); //asdsfddf345fgfg
+    console.log(str1); //asdsfddf[3][4][5]fgfg
+
+
+    //4. 345=>6810
+    var str = 'asdsfddf345fgfg';
+    var str1 = str.replace(/(\d)/gi, function(item){
+        return 2*item
+    })
+    console.log(str); //asdsfddf345fgfg
+    console.log(str1); //asdsfddf6810fgfg
+
+    //5. 数组每项运算
+    var arr = [1,5,40,80];
+    var res = arr.forEach(function(item, index, input){
+        input[index] = item*10;
+    })
+    console.log(arr);
+    console.log(res);
+
+    var arr = [1,5,40,80];
+    var res = arr.map(function(item, index, input){
+        return  item*10;
+    })
+    console.log(arr);
+    console.log(res);
+</script>
+</body>
+</html>

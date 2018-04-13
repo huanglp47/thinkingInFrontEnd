@@ -89,3 +89,5 @@ for (let i = 0; i < array.length; i++) {
    }
 }
 console.log(a);
+
+//将'dfgfgfg345fgfgfg',转化为'dfgfgfg[3][4][5]fgfgfg'

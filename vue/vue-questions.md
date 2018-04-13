@@ -35,3 +35,75 @@ $emit $on
 ### 3.公用方法mixin处理，全局状态该如何存储，如何自定义组件的指令
 
 ### 4.vue-cli脚手架了，vue是如何通过使用webpack进行测试和生产环境进行一个构建处理的
+
+
+### 5 数据筛选 computed（）
+```js
+1.<li v-for="n in evenNumbers">{{ n }}</li>
+
+data: {
+  numbers: [ 1, 2, 3, 4, 5 ]
+},
+computed: {
+  evenNumbers: function () {
+    return this.numbers.filter(function (number) {
+      return number % 2 === 0
+    })
+  }
+}
+```
+```js
+2.
+<li v-for="n in even(numbers)">{{ n }}</li>
+data: {
+  numbers: [ 1, 2, 3, 4, 5 ]
+},
+methods: {
+  even: function (numbers) {
+    return numbers.filter(function (number) {
+      return number % 2 === 0
+    })
+  }
+}
+```
+
+## 6 vuex
+
+```js
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式
+mapState 辅助函数
+
+import {mapState, mapActions} from 'vuex'
+当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。
+为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性
+
+Getters
+mapGetters辅助函数仅仅是将store中的getters映射到局部计算属性中，用法和mapState类似Getters
+```
+
+### 7
+```
+1.var data = {
+	a:1
+}
+//共享了同一个 data ， 因此增加一个 counter 会影响所有组件！
+data:function(){
+	return data
+}
+
+//返回全新的 data 对象来解决这个问题
+2.data:function(){
+	return {
+		a:1
+	}
+}
+//vue中data 是一个例外，它必须是函数
+```
+
+### 8
+```
+Vue webpack项目无法在控制台 devTool下断点调试
+查找webpack配置,找到devtool
+devtool: options.dev ? '#eval-source-map' : '#source-map'
+把 #eval-source-map 改成 #source-map 就好了
+```
