@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css 实现的简单demo</title>
+    <style type="text/css">
+        .aa{
+            width: 0;
+            height: 0;
+            border-radius: 100%;
+            border-left:50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+
+            border-left-color: #000;
+            border-right-color: #000;
+            border-top-color:red;
+            border-bottom-color:red;
+        }
+        .aa1{
+            width: 0;
+            height: 0;
+            border-radius: 100%;
+            border: 50px solid;
+            border-color: #000 red #000 red
+        }
+    </style>
+</head>
+<body>
+<!--两种方式-->
+<div class="aa"></div>
+<div class="aa1"></div>
+
+<div>如何获得某个id为“test”的元素的CSS属性值？</div>
+<div>
+    <div id="test" style="background-color:red">
+</div>
+<script>
+    var dom = document.getElementById("test");
+    console.log(dom.style.backgroundColor);// red
+    console.log(dom.style.width);// 什么都没输出
+//    ie:currentStyle
+    var computedStyle = document.defaultView.getComputedStyle(dom, null);
+    console.log(computedStyle.width);// 100px
+    console.log(computedStyle.backgroundColor);// rgb(255, 0, 0)
+</script>
+</body>
+</html>

@@ -3,8 +3,70 @@
 
 ## 二.发布 / 订阅者模式
 
-![发布订阅](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_pulic_subscribe.png)
+<!-- ![发布订阅](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_pulic_subscribe.png) -->
 
+```js
+var pubsub = (function() {
+        var q = {}
+            topics = {},
+            subUid = -1;
+        //发布消息
+        q.publish = function(topic, args) {
+            if (!topics[topic]) {
+                return;
+            }
+            var subs = topics[topic],
+                len = subs.length;
+            while (len--) {
+                subs[len].func(topic, args);
+            }
+            return this;
+        };
+        //订阅事件
+        q.subscribe = function(topic, func) {
+            topics[topic] = topics[topic] ? topics[topic] : []; //允许订阅多次，只能订阅一次呢？
+            var token = (++subUid).toString();
+            topics[topic].push({
+                token: token,
+                func: func
+            });
+            return token;
+        };
+        q.remove = function(token, topic){
+            var subs = topics[topic],
+                len = subs.length;
+            while (len--) {
+               if( subs[len].token == token){
+                console.log('删除订阅主题：'+topic);
+                subs.splice(len,1)
+               }
+            }
+        }
+        return q;
+    })();
+    //触发的事件
+    var f2 = function(topics, data) {
+       console.log("logging:" + topics + ":" + data);
+       console.log("this is function2");
+    }
+    var f3 = function(topics, data) {
+       console.log("logging3:" + topics + ":" + data);
+       console.log("this is function3");
+    }
+    function f1() {　
+        setTimeout(function() {// f1的任务代码
+　
+            console.log("this is function1");
+            //发布消息'done'
+            pubsub.publish('done', 'hello world');　　　　
+        }, 1000);
+    }
+    var fn = pubsub.subscribe('done', f2);
+    pubsub.subscribe('done', f3);
+    pubsub.subscribe('aa', f2);
+    f1();
+    pubsub.remove(fn,'done')
+    ```
 ## 三.promise
 ```js
 $.ajax("test.html")
