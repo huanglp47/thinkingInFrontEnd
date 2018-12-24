@@ -11,26 +11,24 @@ $emit $on
 
 //父组件
 
-![子调用父例子](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/vue-father-component-1.png)
+![子调用父例子](../img/vue-father-component-1.png)
 
 //子组件
 
-![子调用父例子](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/vue-child-component-1.png)
+![子调用父例子](../img/vue-child-component-1.png)
 
 #### 2.2 父组件调用子组件
 //父组件
 
-![父组件调用子组件](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/vue-father-component-2.png)
+![父组件调用子组件](../img/vue-father-component-2.png)
 
 //子组件
 
-![父组件调用子组件](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/vue-child-component-2.png)
+![父组件调用子组件](../img/vue-child-component-2.png)
 
 #### 2.3.子组件与子组件通信
 
-![子组件与子组件通信](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/vue-child-child-component.png)
-
-
+![子组件与子组件通信](../img/vue-child-child-component.png)
 
 ### 3.公用方法mixin处理，全局状态该如何存储，如何自定义组件的指令
 
@@ -116,3 +114,17 @@ Vue webpack项目无法在控制台 devTool下断点调试
 devtool: options.dev ? '#eval-source-map' : '#source-map'
 把 #eval-source-map 改成 #source-map 就好了
 ```
+
+### 9. vue文件中style的scoped属性
+
+scoped可以实现style只作用于当前的.vue文件
+
+```
+<div data-v-53795c54 class="user"></div>
+css样式是这样的
+
+.user[data-v-53795c54] {
+    color:#333;
+}
+```
+
