@@ -1,6 +1,22 @@
 ## vue的一些问题收集
 
-### 1.什么时候适合用methods，什么时候适合用compute，d什么时候适合用watch
+### 1.什么时候适合用methods，什么时候适合用computed，什么时候适合用watch
+methods是个方法，比如你点击事件要执行一个方法，这时候就用methods(传递参数的话也使用methods)
+
+computed是计算属性，实时响应的（计算属性默认只有getter，可以在需要的时候自己设定setter）
+
+computed比较适合一个属性受多个属性影响的情形
+
+可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，
+不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。
+这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，<font color="red">而不必再次执行函数</font>
+
+watch:
+watch和computed很相似，watch用于观察和监听页面上的vue实例，当然在大部分情况下我们都会使用computed，但如果要在<font color="red">数据变化的同时进行异步操作或者是比较大的开销</font>，那么watch为最佳选择
+
+watch为一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象
+
+
 
 ### 2.各组件如何通信（父传子，子传父，同级组件）
 vuex
@@ -128,3 +144,19 @@ css样式是这样的
 }
 ```
 
+### 10. Vue.nextTick用法
+```
+用法：在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
+应用场景：需要在视图更新之后，基于新的视图进行操作
+在 created 和 mounted 阶段，如果需要操作渲染后的试图，也要使用 nextTick 方法
+
+```
+
+### 11. vue如何使用filter过滤器
+```js
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+```
+### 12. keep-alive使用

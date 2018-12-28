@@ -35,6 +35,7 @@ body {
 
 .main-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start; }
   .main-item .first-face {
     display: flex; }
@@ -69,10 +70,15 @@ body {
 
 .main-item2 .second-face {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
+.main-item2 .second-face .pip:nth-child(2) {
+  align-self: flex-end;
+}
 .main-item2 .second-2-face {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
   .main-item2 .second-2-face .pip:nth-child(2) {
     align-self: center; }
   .main-item2 .second-2-face .pip:nth-child(3) {

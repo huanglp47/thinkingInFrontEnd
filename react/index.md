@@ -68,6 +68,8 @@ React.createClass创建的组件，其每一个成员函数的this都有React自
 ### Redux
 Redux 是 JavaScript 状态容器，提供可预测化的状态管理
 
+### react原理
+为什么不实现双向绑定？为什么react没有在state变化时将data自动同步到dom，在dom value变化时自动同步到state？
 
 
 
