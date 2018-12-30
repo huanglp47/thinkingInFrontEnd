@@ -3,8 +3,6 @@
 
 ## 二.发布 / 订阅者模式
 
-<!-- ![发布订阅](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_pulic_subscribe.png) -->
-
 ```js
 var pubsub = (function() {
         var q = {}
@@ -94,14 +92,14 @@ f1().then(f2).then(f3);
 
 ## 四.Generator(使用标志*/yield)(ES6)
 
-![Generator1](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_generator_1.png)
+![Generator1](../img/js_generator_1.png)
 
-![Generator2](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_generator_2.png)
+![Generator2](../img/js_generator_2.png)
 
-## 五.async await(ES7)
+## 五.async await(ES7,ES8?)
 
-![async_await1](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_async_await.png)
+![async_await1](../master/img/js_async_await.png)
 
   await 命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try...catch 代码块中
 
-![async_await2](https://github.com/huanglp47/thinkingInFontEnd/blob/master/img/js_async_await_2.png)
+![async_await2](../img/js_async_await_2.png)
