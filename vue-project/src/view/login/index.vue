@@ -8,23 +8,29 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+  import {mapState, mapActions } from 'vuex';
 
 export default {
     name: "list",
     data(){
       return {
-        token:''
+
       }
     },
     computed: {
-      ...mapState([{
-        userName: state=>state.login.userName
-      },'job'])
+      ...mapState({
+        userName: state=>state.login.userName,
+        job:state=>state.job,
+        token: state=>state.login.token
+      })
     },
     methods:{
+      ...mapActions([
+        'getLogin'
+      ]),
       gotoLogin(){
-        this.$store.dispatch("getLogin", "token11234566")
+        // this.$store.dispatch("login/getLogin", "token11234566")
+        this.getLogin()
       }
     }
 }
