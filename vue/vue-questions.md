@@ -82,6 +82,11 @@ methods: {
 ```
 
 ## 6 vuex
+使用场景：
+
+多个视图依赖于同一状态。
+
+来自不同视图的行为需要变更同一状态。
 
 ```js
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式
@@ -160,3 +165,79 @@ Vue.filter('capitalize', function (value) {
   return value.charAt(0).toUpperCase() + value.slice(1)
 ```
 ### 12. keep-alive使用
+
+### 13. 组件slot
+```
+组件模板之中的内容分发插槽
+有 name 特性的 slot 称为具名 slot。 有 slot 特性的内容将分发到名字相匹配的具名 slot
+作用域插槽是一种特殊类型的插槽，用作使用一个 (能够传递数据到) 可重用模板替换已渲染元素。
+
+父组件通过slot-scope就可以拿到子组件slot上绑定的值，并且2.5.0版本可以用于任意元素上
+
+1.匿名slot使用
+//定义组件my-component
+<div class="myComponent">
+  <slot></slot>
+</div>
+//使用方法
+<my-component>
+  <p>我就是slot的替代内容，这里可以放任何标签元素，即使是一长串ul>li列表</p>
+</my-component>
+
+2.具名slot使用
+
+//定义组件my-component
+<div class="myComponent">
+  <slot name="mySlot"></slot>
+</div>
+//使用方法
+<my-component>
+  <p slot="mySlot">我就是这个叫mySlot的slot替代内容，这里可以放任何标签元素，即使是一长串ul>li列表，但是我是一个有名字的宝宝，所以你必须给我加上slot="mySlot"，不然我就报错给你看！</p>
+</my-component>
+```
+
+### 在vue中使用import()来代替require.ensure()实现代码打包分离
+```
+例：require.ensure()实现
+const notFound = r => require.ensure([], () => r(require('@views/common/404')), 'index')
+
+例：import()实现
+const notFound = () => import(/* webpackChunkName: "index" */ '@views/common/404')
+```
+
+```
+require.ensure()
+https://react-guide.github.io/react-router-cn/docs/guides/advanced/DynamicRouting.html
+
+```
+
+### mixins使用
+```
+混入 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。
+混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被混入该组件本身的选项。
+
+和组件的数据发生冲突时以组件数据优先。
+
+
+全局混入
+// 为自定义的选项 'myOption' 注入一个处理器。
+Vue.mixin({
+  created: function () {
+    var myOption = this.$options.myOption
+    if (myOption) {
+      console.log(myOption)
+    }
+  }
+})
+
+new Vue({
+  myOption: 'hello!'
+})
+// => "hello!"
+```
+
+
+
+
+
+

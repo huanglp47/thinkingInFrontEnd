@@ -71,10 +71,12 @@ Redux 是 JavaScript 状态容器，提供可预测化的状态管理
 ### react原理
 为什么不实现双向绑定？为什么react没有在state变化时将data自动同步到dom，在dom value变化时自动同步到state？
 
+### react-loadable实现代码分割和懒加载
+```
+A higher order component for loading components with promises.
+用于加载具有promise的组件的更高阶组件
 
-
-
-
+```
 
 
 
