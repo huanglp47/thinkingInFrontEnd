@@ -1,10 +1,18 @@
+import * as types from './mutation-type.js'
 import {
-  LOGIN
-} from './mutation-type.js'
+  getQuickLogin
+} from '../../service/getData.js'
+
 
 export default {
-  // 参数 state为当前局部状态，rootState为根节点状态
+  // 参数 state为当前局部状态，rootState为根节点状态，rootGetters
   getLogin({state, commit, rootState}, obj){
-    commit('LOGIN', 'sdsfdg')
-  },
+    getQuickLogin(obj).then( (res)=>{
+        console.log(state);
+        console.log(rootState.global_job);
+        commit(types.LOGIN, 'sdsfdg')
+    },(res)=>{
+      console.log(res)
+    })
+  }
 }

@@ -4,9 +4,6 @@
     <h2>登录token：{{token}}</h2>
     <ul>
       <li @click="gotoLoginPage()"><a href="javascript:;">Core Docs</a></li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank">Forum</a>
-      </li>
     </ul>
   </div>
 </template>
