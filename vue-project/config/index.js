@@ -10,7 +10,22 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/mixc': {
+        target: 'http://test.mixcapp.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/mixc': '/mixc'
+        }
+      },
+      '/wxtd': { // PHP
+        target: 'http://test.mixcapp.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wxtd': '/wxtd'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
