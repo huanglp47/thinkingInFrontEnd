@@ -7,7 +7,10 @@ import App from './App.vue'
 
 import store from './store/index'
 
-import 'es6-promise/auto'
+// import 'es6-promise/auto'
+import promise from 'es6-promise';
+promise.polyfill();
+
 import FastClick from 'fastclick'
 
 Vue.config.productionTip = false
