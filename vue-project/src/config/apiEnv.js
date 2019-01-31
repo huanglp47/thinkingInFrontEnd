@@ -1,5 +1,5 @@
 //自动判断接口环境
-let ApiUrl = 'http://localhost:3000';
+let ApiUrl = 'http://localhost:8080';
 
 const url = window.location;
 const hostName = url.hostname;
