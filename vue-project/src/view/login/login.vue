@@ -43,7 +43,8 @@ export default {
 //         this.$store.dispatch("getLogin", "token11234566")
         this.getLogin({
           name:'addidas',
-          psw:'123456'
+          psw:'123456',
+          ts: new Date().getTime()
         })
       },
       gotoAgreementPage(){
