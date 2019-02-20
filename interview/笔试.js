@@ -96,3 +96,140 @@ function add () {
 add(2)(7)(455)(5656)
 add(1)
 
+//检测空对象
+Object.keys(obj).length === 0
+
+//实现inserAfter
+function insertAfter(newElement, targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement) {
+        parent.appendChild(newElement);
+    } else {
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
+}
+//////////
+var name = "The Window";
+var object = {
+    name: "My Object",
+    getNameFunc: function() {
+        console.log(this.name); //"My Object"
+        return function() {
+            return this.name; //"The Window"
+        };
+    }
+};
+alert(object.getNameFunc()());
+
+///////////////////////////
+//实现person.set(10).get() //20
+function Person() {}
+Person.prototype = {
+    num: null,
+    set: function(n) {
+        this.num = n;
+        return this
+    },
+    get: function() {
+        return (this.num) * 2
+    }
+}
+var person = new Person();
+var a = person.set(10).get()
+console.log(a);
+
+///////////////////
+
+//runAsync().then(function(){}).then(function(){})
+function runAsync() {
+    var p = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            console.log("异步任务1执行完成");
+            resolve("随便什么数据1");
+        }, 3000)
+    })
+    return p
+}
+runAsync().then(function() {
+    console.log("异步任务1执行结果");
+})
+////////////////
+//字符串截取
+(function aa(val, len, m) {
+    var len = len || 30
+    var m = m || '...';
+    if (val.length >= len) {
+        console.log(val.substr(0,len) + m)
+        return val.substr(0,len) + m
+    }else{
+        return val
+    }
+})('sdsfdfdfdgfg', 10, '...')
+
+//////////////////
+//promise异步错误无法在catch中获取
+const wait = function(){
+    const promise = new Promise((resolve,reject)=>{
+        console.log('创建promise对象')
+        const task = function(){
+            console.log('执行成功')
+            resolve() // 同理，reject则走'err 1'
+        }
+        setTimeout(task, 2000)
+    })
+    return promise
+}
+wait().then(()=>{
+    console.log('ok 1')
+},()=>{
+    console.log('err 1')
+}).catch( err=> {
+    console.log('err')
+})
+// 结果：
+// 创建promise对象
+// 执行成功
+// ok 1
+
+////////////////
+//考察作用域和arguments
+var length = 10;
+function fn(){
+    console.log(this.length)
+}
+var obj = {
+    length:5,
+    method: function(fn){
+        console.log( this.length)
+        fn();
+        arguments[0]();
+    }
+}
+obj.method(fn, '1')
+//结果：
+//5
+//10
+//2
+
+////////////////
+//截取银行卡卡号，每4位分离，最后剩1-3位不处理
+//方法1
+var str = '81002000008031';
+var a = str.replace(/(\d{4})(?=\d)/g, "$1 ")
+console.log(str);
+console.log(a)
+//81002000008031
+//8100 2000 0080 31
+
+// 方法2
+var str = '8100200008888888888808031';
+var arr = str.split("");
+for (var i = 0, len = arr.length; i < len; i++) {
+    if ((i+1) % 4 == 0) {
+        arr[i] += " "
+    }
+}
+var str2 = arr.join('');
+console.log(str2);
+// 8100 2000 0888 8888 8888 0803 1
+

@@ -1,3 +1,69 @@
+### 1.	Symbol
+```
+表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是： Undefined 、 Null 、布尔值（ Boolean ）、字符串（ String ）、数值（ Number ）、对象（ Object ）
+
+Symbol函数前不能使用new命令，否则会报错
+Symbol 值不能与其他类型的值进行运算，会报错
+```
+
+<img src="../img/symbol/1.jpg"/>
+
+```
+Symbol函数的参数只是表示对当前 Symbol 值的描述，因此相同参数的Symbol函数的返回值是不相等的
+```
+<img src="../img/symbol/2.jpg"/>
+
+```
+Symbol 值可以显式转为字符串。
+```
+
+<img src="../img/symbol/3.jpg"/>
+
+### TCP协议中的三次握手和四次挥手
+### 请求报头举例：
+```
+GET /form.html HTTP/1.1 (CRLF)
+Accept:image/gif,image/x-xbitmap,image/jpeg,application/x-shockwave-flash,application/vnd.ms-excel,application/vnd.ms-powerpoint,application/msword,*/* (CRLF)
+Accept-Language:zh-cn (CRLF)
+Accept-Encoding:gzip,deflate (CRLF)
+If-Modified-Since:Wed,05 Jan 2007 11:21:25 GMT (CRLF)
+If-None-Match:W/"80b1a4c018f3c41:8317" (CRLF)
+User-Agent:Mozilla/4.0(compatible;MSIE6.0;Windows NT 5.0) (CRLF)
+Host:www.guet.edu.cn (CRLF)
+Connection:Keep-Alive (CRLF)
+```
+
+### FormData对象，它可以更灵活方便的发送表单数据，因为可以独立于表单使用。
+```
+最大的好处是可以通过Ajax上传文件。通过这种方式，可以非常方便的进行表单提交，也不需要下文提到的那种方法了，直接表单转换成FormData对象即可。
+var fd = new FormData(document.querySelector("form"));
+fd.append("CustomField", "This is some extra data");
+$.ajax({
+  url: "stash.php",
+  type: "POST",
+  data: fd,
+  processData: false,  // 不处理数据
+  contentType: false   // 不设置内容类型
+});
+
+jquery的serializeArray方法（现在请使用FormData）
+JQuery.param()方法：
+var arr = $('#addForm').serializeArray();
+$.param(arr);
+
+"uname=alice&mobileIpt=110&birthday=1983-05-12"
+```
+
+```
+encodeURI() 函数是不会进行转义的：;/?:@&=+$,#
+也就是说encodeURI不编码字符有82个：!，#，$，&，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z
+
+encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z
+
+encodeURI和encodeURIComponent会把字符串编码成UTF-8的格式。
+```
+
+
 ### 1.声明函数作用提升?声明变量和声明函数的提升有什么区别?
 >(1) 变量声明提升：变量申明在进入执行上下文就完成了。
 只要变量在代码中进行了声明，无论它在哪个位置上进行声明， js引擎都会将它的声明放在范围作用域的顶部；

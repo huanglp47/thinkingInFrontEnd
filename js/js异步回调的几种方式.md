@@ -91,6 +91,16 @@ f1().then(f2).then(f3);
  5.	Promise.all() // 所有的完成
 
 ## 四.Generator(使用标志*/yield)(ES6)
+```
+Generator函数的概念：
+yield 语句
+Generator 函数可以暂停执行和恢复执行，这是它能封装异步任务的根本原因。
+next 方法返回值的 value 属性，是 Generator 函数向外输出数据；next 方法还可以接受参数，这是向 Generator 函数体内输入数据。
+协程：多个线程互相协作，完成异步任务。
+Generator 函数是协程在 ES6 的实现。最大特点就是可以交出函数的执行权（即暂停执行）
+-------------------------------
+Koa 通过把一个中间件中的所有异步操作都 yield 出去，用 co 包来处理
+```
 
 ![Generator1](../img/js_generator_1.png)
 
@@ -98,7 +108,7 @@ f1().then(f2).then(f3);
 
 ## 五.async await(ES7,ES8?)
 
-![async_await1](../master/img/js_async_await.png)
+![async_await1](../img/js_async_await.png)
 
   await 命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try...catch 代码块中
 
