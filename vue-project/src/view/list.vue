@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import myChild from '../components/detail.vue'
+  import myChild from '../components/demo/detail.vue'
     export default {
         name: "list",
         data(){

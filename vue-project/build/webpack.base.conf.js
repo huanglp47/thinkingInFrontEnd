@@ -69,6 +69,9 @@ module.exports = {
       //解析.css文件
       {
         test: /\.css$/,
+        include: [
+          '/node_modules/element-ui/lib/'
+        ],
         loader: ExtractTextPlugin.extract("style", 'css')
       },
       {

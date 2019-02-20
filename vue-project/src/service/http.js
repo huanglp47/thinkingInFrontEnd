@@ -1,36 +1,68 @@
-import HTTP from './axios_config'
+import { mixcAlert } from '../assets/js/utils';
 
-export const getAjax = function(url, obj){
+import HTTP from './axiosConfig'
+import router from '../router'
+import {ROUTER_BASE} from '../config/apiEnv'
 
-  // isNeedLoading && Toast.loading('请求中...', 10);
-  return new Promise((resolve,reject)=>{
+function myAlert(text) {
+  mixcAlert( text , '出错啦！', {
+    confirmButtonText: '确定',
+  });
+}
+
+/**
+ *  @param {String} url  request api url
+ *  @param {Object} obj  request params
+ *  @param {Function} successFn  respone success callback function
+ *  @param {Boolean} needLoading  whether need mask when fetch data,prevent repeated clicks
+ *  @param {Function} failFn  respone fali callback function
+ *
+ */
+export const getAjax = function(url, obj, successFn, needLoading, failFn){
+
+  // needLoading && Toast.loading('请求中...', 10);
     HTTP.get(url, {params:obj}).then(res=>{
     // HTTP.get(url, JSON.stringify(obj)).then(res=>{
       if(res.data.code=='0'){
-        resolve(res.data);
+        typeof successFn ==='function' && successFn(res.data);
       }else if(res.data.code=='401') {
         //登录
+        router.push(ROUTER_BASE+'/login')
       }else{
-        reject(res);
+        if(failFn){
+          typeof failFn ==='function' && failFn(res.data);
+        }else{
+          myAlert(res.data.message)
+        }
       }
-    })
   }).catch( (err)=>{
-    reject(res);
+      myAlert('数据请求错误！')
   })
 }
 
-export const postAjax = function(url, obj){
-  return new Promise((resolve, reject) => {
-    HTTP.post(url, {params:obj}).then((res) => {
-        if(res.data.code==0){
-          resolve(res.data.data);
-        }else {
-          // Toast(res.data.message);
-          reject(res);
-        }
-    }).catch((err) => {
-      // Toast(err);
-      reject(err);
-    });
+/**
+ *  @param {String} url  request api url
+ *  @param {Object} obj  request params
+ *  @param {Function} successFn  respone success callback function
+ *  @param {Boolean} needLoading  whether need mask when fetch data,prevent repeated clicks
+ *  @param {Function} failFn  respone fali callback function
+ *
+ */
+export const postAjax = function(url, obj, successFn, needLoading, failFn){
+  // needLoading && Toast.loading('请求中...', 10);
+  HTTP.get(url, {params:obj}).then(res=>{
+    if(res.data.code=='0'){
+      typeof successFn ==='function' && successFn(res.data);
+    }else if(res.data.code=='401') {
+      router.push(ROUTER_BASE+'/login')
+    }else{
+      if(failFn){
+        typeof failFn ==='function' && failFn(res.data);
+      }else{
+        myAlert(res.data.message)
+      }
+    }
+  }).catch( (err)=>{
+    myAlert('数据请求错误！')
   })
 }

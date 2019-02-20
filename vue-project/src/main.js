@@ -1,5 +1,3 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from './router'
@@ -7,22 +5,32 @@ import App from './App.vue'
 
 import store from './store/index'
 
-// import 'es6-promise/auto'
 import promise from 'es6-promise';
 promise.polyfill();
 
-import FastClick from 'fastclick'
+import {
+  Button,
+  Select,
+  Loading,
+  MessageBox,
+  Message,
+} from 'element-ui';
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 
-if ('addEventListener' in document) {
-  document.addEventListener('DOMContentLoaded', function(){
-    FastClick.attach(document.body);
-  }, false);
-}
+//按需加载，需要引入元素再手动添加
+Vue.use(Button)
+Vue.use(Select)
 
-new Vue({
+Vue.prototype.$loading = Loading.service;
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$message = Message;
+
+export const vm = new Vue({
   router,
   store,
   render: h => h(App)

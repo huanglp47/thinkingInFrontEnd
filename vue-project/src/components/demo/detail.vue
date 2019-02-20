@@ -3,13 +3,14 @@
     {{giveChildData}}
     <div>
       子组件--不可点击
+      <br/>
       <detail-item @sendChildData="getChildData"></detail-item>
     </div>
   </div>
 </template>
 
 <script>
-  import DetailItem from '../components/detailItem'
+  import DetailItem from '../demo/detailItem'
     export default {
         name: "detail",
         data(){

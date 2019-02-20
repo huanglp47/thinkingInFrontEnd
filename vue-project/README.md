@@ -1,12 +1,14 @@
-# demovue
-
 ### A Vue.js project
 
 ### 技术链：
-#### 1.vue2.0+
+#### 1.vue2.0+, vuex, vue-router, axioss, ass。按照UI要求，界面使用element-ui UI框架
+链接： http://element-cn.eleme.io/#/zh-CN/component/installation
 
 #### 2.Vuex
->2.1.dispatch action中定义的方法（view层触发），再commit（action）到mutation层修改state，再双向绑定同步view层做出回应
+
+<font color='red'>超过三层组件嵌套关系时使用vuex,不使用事件订阅或eventBus!持久化缓存使用localStorage</font>
+
+>2.1.dispatch action中定义的方法（view层触发,还可以用mapActions映射，原理一致），再commit（action）到mutation层修改state，再双向绑定同步view层做出回应
 state
 
 state区分全局和模块state（局部）
@@ -16,7 +18,10 @@ state区分全局和模块state（局部）
 使用了module则需要添加作用域。this.$store.state.login.userName
 
 action和mutation，getter都是全局的，但是参数state默认是module内的局部state，访问全局state需要参数rootState
-直接访问this.$store.dispatch("getLogin", "token11234566")
+直接访问
+this.$store.state.login.userName
+
+this.$store.dispatch("getLogin", "token11234566")
 
 >2.2mapActions, mapState,mapGetters
 
