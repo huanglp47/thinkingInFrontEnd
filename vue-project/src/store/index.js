@@ -8,22 +8,24 @@ import actions from './action'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    global_job: "web", //全局
-    configInfo: '',
-    mallList:[],
-    home:{
-      doSomething:''
+    state: {
+        isLoading: false, //页面加载
+        userInfo:{
+            userId:'',
+            username:'',
+            realName:'',
+            nickName:'',
+            _state:'',
+            state:'',
+            department:'',
+            position:'',
+        }
     },
-    user:{
-
-    }
-  },
-  getters: {//全局
-  },
-  mutations,
-  actions,
-  modules:{
-    login: login,
-  },
+    getters: { //全局
+    },
+    mutations,
+    actions,
+    modules:{
+        login: login,
+    },
 })

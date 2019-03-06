@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <img src="https://imgs1.oss-cn-shenzhen.aliyuncs.com/datalens/404.png">
-      <h2>Oh No! ÄãµÄÍøÒ³×ß¶ªÁË.......</h2>
+      <h2>Oh No! ä½ çš„ç½‘é¡µèµ°ä¸¢äº†.......</h2>
     </div>
 </template>
 
@@ -9,7 +9,6 @@
   export default {
     data(){
       return {
-
       }
     },
   }
@@ -18,7 +17,7 @@
 <style scoped lang="scss">
   .container{
     margin: 0 auto;
-    margin-top: 203px;
+    padding-top: 203px;
     text-align: center;
     img {
       width: 410px;

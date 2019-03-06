@@ -1,0 +1,72 @@
+/**
+* login
+*/
+.login-container{
+  .el-input__inner{
+    height: 60px;
+    line-height: 60px;
+    box-sizing: border-box;
+  }
+  .el-form-item__error{
+    display: none;
+  }
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+}
+
+/**
+* user/changePhone
+*/
+.user-change-phone-form{
+  .el-input{
+    width: 460px
+  }
+}
+
+
+
+/* accountOp */
+.account-center-form  {
+  .el-input input {
+    width: 100%;
+    height: 50px; // 写死修复firefox
+  }
+  .el-form-item__error--inline {
+    position: absolute;
+    top: 0;
+    right: -310px;
+    width: 300px;
+    height: 100%;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+  }
+  .el-input-group__append {
+    width: 100px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+  }
+}
+.user-container-wraper {
+  .el-input-group__append {
+    width: 100px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+  }
+}
+.header-dropdown-menu {
+  width: 124px;
+  margin-left: -10px;
+  text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}

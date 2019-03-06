@@ -74,17 +74,17 @@ module.exports = {
         ],
         loader: ExtractTextPlugin.extract("style", 'css')
       },
-      {
-        test: /\.scss/,
-        use: ExtractTextPlugin.extract({
-          use:[{
-            loader:'css-loader'
-          },{
-            loader:'sass-loader'
-          }],
-          fallback:'style-loader'
-        })
-      }
+      // {
+      //   test: /\.scss/,
+      //   use: ExtractTextPlugin.extract({
+      //     use:[{
+      //       loader:'css-loader'
+      //     },{
+      //       loader:'sass-loader'
+      //     }],
+      //     fallback:'style-loader'
+      //   })
+      // }
     ]
   },
   node: {

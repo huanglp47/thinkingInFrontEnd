@@ -12,18 +12,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/mixc': {
-        target: 'http://test.mixcapp.com',
+        target: 'http://aa.bb.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/mixc': '/mixc'
+          '^/aa': '/aa'
         }
       },
-      '/wxtd': { // PHP
-        target: 'http://test.mixcapp.com',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/wxtd': '/wxtd'
-        }
       }
     },
 
