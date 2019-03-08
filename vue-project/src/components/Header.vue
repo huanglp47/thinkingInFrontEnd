@@ -1,7 +1,7 @@
 <template>
     <header class="header" >
         <div :class="['logo', identityRank ? 'br1px' : '']" v-if="identityRank >= 0">
-            <img src="../assets/imgs/icon/mixc-text.png" alt="">
+            <img src="../assets/imgs/icon/aa-text.png" alt="">
         </div>
         <ul class="menu">
             <template v-if="identityRank >= 1">
@@ -72,7 +72,7 @@
                     this.userInfo = userInfo;
                     this.realName = userInfo.realName.length > 3 ? userInfo.realName.slice(0, 3) + '...' : userInfo.realName;
                 } catch (error) {
-                    
+
                 }
             },
             handleCommand(command) {

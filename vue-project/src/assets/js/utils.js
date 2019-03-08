@@ -1,6 +1,6 @@
 import { vm } from '../../main.js';
 
-let mixc_vm=null;
+let aa_vm=null;
 
 /**
   * @param {String} val
@@ -10,21 +10,21 @@ export const trim = function(val){
     return val.replace(/^\s+|\s+$/gm, '')
 }
 
-export const mixcAlert=  function(text) {
+export const aaAlert=  function(text) {
     vm.$alert( text , '出错啦！', {
         confirmButtonText: '确定',
     });
 }
-export const mixcLoading=  function(text) {
-    mixc_vm = vm.$loading({
+export const aaLoading=  function(text) {
+    aa_vm = vm.$loading({
         lock: true,
         text: text || '加载中...',
         spinner: 'el-icon-loading',
         background: 'rgba(0, 0, 0, 0.2)',
     })
 }
-export const mixcCloseLoading=  function() {
-    mixc_vm.close()
+export const aaCloseLoading=  function() {
+    aa_vm.close()
 }
 
 //用户状态：0, "未激活"1, "正常"2, "冻结"3, "申诉中"

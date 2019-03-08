@@ -1,12 +1,12 @@
 <template>
     <div class="login-container">
         <div class="login-header layout-box">
-          <div class="logo"><img src="../../assets/imgs/icon/mixc-text.png" alt=""></div>
+          <div class="logo"><img src="../../assets/imgs/icon/aa-text.png" alt=""></div>
         </div>
         <div class="login-area">
           <el-form class="login-form-wraper" :model="loginForm" status-icon :rules="rules" ref="loginForm" @keyup.enter.native="submitForm('loginForm')">
-              <h1 class="login-title">Nice to mixc you !</h1>
-              <p class="login-subTitle">一点万象APP管理后台</p>
+              <h1 class="login-title">Nice to aa you !</h1>
+              <p class="login-subTitle">adsdf</p>
               <div class="login-form">
                 <el-form-item class="mobile" prop="username">
                     <el-input type="text" style="display:none;width:0;height:0;"></el-input>

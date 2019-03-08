@@ -1,5 +1,5 @@
 import * as types from './mutation-type.js'
-import { mixcAlert } from '../assets/js/utils';
+import { aaAlert } from '../assets/js/utils';
 import {
     getConfig,
     getUserInfo,

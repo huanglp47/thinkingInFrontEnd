@@ -6,7 +6,7 @@
         <router-view/>
 
         <!--页面切换效果-->
-        <!--<div class="mixc-page-loading" v-if="isLoading">-->
+        <!--<div class="aa-page-loading" v-if="isLoading">-->
             <!--<div class="loadText">{{loadText}}</div>-->
         <!--</div>-->
     </div>
@@ -36,7 +36,7 @@
         background: #ffffff;
         height: 100%;
     }
-    .mixc-page-loading{
+    .aa-page-loading{
         position: absolute;
         top:0;
         left: 0;

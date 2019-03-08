@@ -2,16 +2,16 @@ let ApiUrl = 'http://localhost:8080';
 const url = window.location;
 const hostName = url.hostname;
 //histaory模式下路由前缀
-let ROUTER_BASE = '/mixcAdmin'
+let ROUTER_BASE = '/admin'
 
-if(hostName =='app.mixcapp.com'){
-  ApiUrl = 'https://app.mixcapp.com'
-}else if(hostName =='test.mixcapp.com'){
-  ApiUrl='http://test.mixcapp.com'
-}else if(hostName =='debug.mixcapp.com'){
-  ApiUrl='http://debug.mixcapp.com'
+if(hostName =='app.xx.com'){
+  ApiUrl = 'https://app.xx.com'
+}else if(hostName =='test.xx.com'){
+  ApiUrl='http://test.xx.com'
+}else if(hostName =='debug.xx.com'){
+  ApiUrl='http://debug.xx.com'
 } else if(hostName =='uat.mixcapp.com'){
-  ApiUrl='http://uat.mixcapp.com';
+  ApiUrl='http://uat.xx.com';
 }else{
   ROUTER_BASE='';
 }

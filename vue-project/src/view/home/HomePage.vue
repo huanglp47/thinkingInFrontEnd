@@ -13,7 +13,7 @@ export default {
   name: 'HomePage',
   data () {
     return {
-      msg: 'Welcome to Mixc Manage Systerm'
+      msg: 'Welcome to aa Manage Systerm'
     }
   },
   computed: {
