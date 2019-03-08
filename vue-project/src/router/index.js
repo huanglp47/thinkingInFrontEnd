@@ -14,15 +14,7 @@ const ThirdPage = () => import('../view/third/index.vue')
 const MenuPage1 = () => import('../view/menu/index1.vue')
 const MenuPage2 = () => import('../view/menu/index2.vue')
 
-const UserHomePage = () => import('../view/user/userHome.vue') // 个人中心主框架页面
-const UserCenterPage = () => import('../view/user/userCenter.vue') //个人中心页面
-const ChangePhonePage = () => import('../view/user/changePhone.vue')
-const ChangePasswordPage = () => import('../view/user/changePassword.vue')
 
-const ListPage = () => import('../view/list.vue')
-const NotFoundPage = () => import('../view/404.vue')
-const AccountOpPage = () => import('../view/AccountOp.vue')
-const AllProject = () => import('../view/AllProject.vue')
 
 Vue.use(Router)
 const router =  new Router({

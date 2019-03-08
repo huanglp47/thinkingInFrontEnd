@@ -3,34 +3,12 @@ import {
   postAjax,
 } from './http.js'
 
-const _loginUrl = '/mixc-admin-service/v1/config'; // 快速登录 demo
-const configUrl = '/mixc-admin-service/v1/config'; // 快速登录
+const _loginUrl = '/aa/v1/config'; // 快速登录 demo
+const configUrl = '/aa/v1/config'; // 快速登录
 
 ////////////////
-const loginUrl = '/mixc-admin-service/v1/user/login'; // 登录
+const loginUrl = '/admin-service/v1/user/login'; // 登录
 
-const logOutUrl = '/mixc-admin-service/v1/user/logout'; // 登出
-
-
-const getCheckMobileUrl = '/mixc-admin-service/v1/user/state'; // 检查用户是否存在
-
-const resetPasswordUrl = '/mixc-admin-service/v1/user/password/reset'; // 重置密码
-
-const updatePasswordUrl = '/mixc-admin-service/v1/user/password/update'; // 修改密码
-
-const verificationCodeUrl = '/mixc-admin-service/v1/msg/sms/send'; // 发送短信验证码
-
-const setPasswordUrl = '/mixc-admin-service/v1/user/password/set'; // 设置密码
-
-const getUserInfoUrl = '/mixc-admin-service/v1/user/info'; // 获取用户信息
-
-const updateMobileUrl = '/mixc-admin-service/v1/user/mobile/update'; // 更换手机号
-
-const mallListUrl = '/mixc-admin-service/v2/mall/malls'; // 项目列表
-
-const addCommonMallsUrl = '/mixc-admin-service/v1/mall/common/add'; // 添加常用项目
-
-const deleteCommonMallsUrl = '/mixc-admin-service/v1/mall/common/delete'; // 删除常用项目
 
 //快速登录
 //failFn 自定义错误

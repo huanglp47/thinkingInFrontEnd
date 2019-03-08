@@ -11,7 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/mixc': {
+      '/aa': {
         target: 'http://aa.bb.com',
         changeOrigin: true,
         pathRewrite: {
@@ -47,12 +47,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../mixcAdmin/index.html'),
+    index: path.resolve(__dirname, '../amdmin/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../mixcAdmin'),
+    assetsRoot: path.resolve(__dirname, '../amdmin'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/mixcAdmin/',
+    assetsPublicPath: '/amdmin/',
 
     /**
      * Source Maps

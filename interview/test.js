@@ -108,3 +108,21 @@ console.log(str1)
 var str='aaaadddddgfgggg23';
 var key = 3;
 str.replace(new RegExp(key,'g'),"b");
+
+
+////////////////////
+chained([a,b,c,d])(input)
+d(c(b(a(input))))
+
+function chained (funcs) {
+	return function(input){
+		return funcs.reduce(function(input, fn){
+			return fn(input)
+		},input)
+	}
+}
+function f1(x){ return x*2 }
+function f2(x){ return x+2 }
+function f3(x){ return x-2 }
+
+chained[f1, f2, f3](0)
